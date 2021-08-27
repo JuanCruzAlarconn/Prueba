@@ -10,7 +10,7 @@ namespace Cadenas
     {
         public void ejercicio13()
         {
-            Console.WriteLine("ingrese una cadena");
+            Console.WriteLine("ingrese una primer cadena");
             string cadena1 = Console.ReadLine();
             Console.WriteLine(  "\nIngrese una segunda cadena\n");
             string cadena2 = Console.ReadLine();

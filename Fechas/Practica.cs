@@ -128,7 +128,7 @@ namespace Fechas
                 }
             } while (flag);
 
-            Console.WriteLine("La hora ingresada es: {0}", fecha.Hour.ToString());
+            Console.WriteLine("La hora ingresada es: {0}", fecha.ToString("HH:mm"));
 
 
         }

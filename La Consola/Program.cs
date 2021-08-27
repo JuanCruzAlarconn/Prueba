@@ -15,7 +15,9 @@ namespace La_Consola
 
             //ejercicio.ejercicio4();
 
-            ejercicio.ejercicio5();
+            //ejercicio.ejercicio5();
+
+            ejercicio.ejercicio6();
 
             Console.WriteLine("\n Ingrese cualquier tecla para salir de la consola de ejecución\n");
 

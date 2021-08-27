@@ -13,7 +13,9 @@ namespace La_Consola
             Practica ejercicio = new Practica();
 
 
-            ejercicio.ejercicio4();
+            //ejercicio.ejercicio4();
+
+            ejercicio.ejercicio5();
 
             Console.WriteLine("\n Ingrese cualquier tecla para salir de la consola de ejecución\n");
 

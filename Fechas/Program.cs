@@ -10,6 +10,12 @@ namespace Fechas
     {
         static void Main(string[] args)
         {
+            Practica ejercicio = new Practica();
+
+            ejercicio.ejercicio27();
+
+            Console.WriteLine("ingrese una tecla para finalizar con la ejecución del programa");
+            Console.ReadKey();
         }
     }
 }

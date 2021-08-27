@@ -33,5 +33,47 @@ namespace Fechas
             Console.WriteLine("{0} es la fecha 90 días posteriores a la fecha ingresada", fecha.AddDays(90));
             Console.WriteLine("{0} es la fecha 120 días posteriores a la fecha ingresada", fecha.AddDays(120));
         }
+
+
+        public void ejercicio28()
+        {
+            //definir si un año ingresado es bisiesto
+
+            string ingreso;
+            int año;
+            bool flag = true;
+
+            do
+
+            {
+                Console.WriteLine("\nIngrese un año\n");
+                ingreso = Console.ReadLine();
+
+                if (string.IsNullOrEmpty(ingreso))
+                {
+                    Console.WriteLine("No puede dejar vacio el campo de ingreso");
+                }
+                else if (!int.TryParse(ingreso, out año))
+                {
+                    Console.WriteLine("Debe de ingresar un año numérico");
+                }
+                else
+                {
+                    flag = false;
+                }
+
+            } while (flag);
+
+            año = Convert.ToInt32(ingreso);
+
+            if (año % 4 == 0 && año % 100 != 0 || año % 400 == 0)
+            {
+                Console.WriteLine("Es un año bisiesto el año ingresado");
+            }
+            else
+            {
+                Console.WriteLine("No es un año bisiesto");
+            }
+        }
     }
 }

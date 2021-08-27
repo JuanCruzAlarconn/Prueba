@@ -107,5 +107,30 @@ namespace Fechas
             Console.WriteLine("La fecha del primero del mes anterior a la fecha ingresada es: {0}", fecha_salida);
 
         }
+
+        public void ejercicio30()
+        {
+            DateTime fecha;
+            string ingreso;
+            bool flag = true;
+            do
+            {
+                Console.WriteLine("ingrese una fecha por teclado");
+                ingreso = Console.ReadLine();
+
+                if (!DateTime.TryParse(ingreso, out fecha))
+                {
+                    Console.WriteLine("El elemento ingresado no se corresponde con un elemento del tipo fecha");
+                }
+                else
+                {
+                    flag = false;
+                }
+            } while (flag);
+
+            Console.WriteLine("La hora ingresada es: {0}", fecha.Hour.ToString());
+
+
+        }
     }
 }

@@ -16,7 +16,9 @@ namespace Fechas
 
             //ejercicio.ejercicio28();
 
-            ejercicio.ejercicio29();
+            // ejercicio.ejercicio29();
+
+            ejercicio.ejercicio30();
 
 
             Console.WriteLine("ingrese una tecla para finalizar con la ejecución del programa");

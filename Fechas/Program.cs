@@ -12,7 +12,12 @@ namespace Fechas
         {
             Practica ejercicio = new Practica();
 
-            ejercicio.ejercicio27();
+            // ejercicio.ejercicio27();
+
+            //ejercicio.ejercicio28();
+
+            ejercicio.ejercicio29();
+
 
             Console.WriteLine("ingrese una tecla para finalizar con la ejecución del programa");
             Console.ReadKey();

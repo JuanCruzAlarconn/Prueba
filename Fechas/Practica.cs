@@ -75,5 +75,37 @@ namespace Fechas
                 Console.WriteLine("No es un año bisiesto");
             }
         }
+
+        public void ejercicio29()
+        {
+            DateTime fecha;
+            string ingreso;
+            bool flag = true;
+            do
+            {
+                Console.WriteLine("ingrese una fecha por teclado");
+                ingreso = Console.ReadLine();
+
+                if (!DateTime.TryParse(ingreso, out fecha))
+                {
+                    Console.WriteLine("El elemento ingresado no se corresponde con un elemento del tipo fecha");
+                }
+                else
+                {
+                    flag = false;
+                }
+            } while (flag);
+
+            fecha = fecha.AddMonths(-1);
+
+            string mes = fecha.ToString("MM");
+
+            string anterior = "01/" + mes + "/"+fecha.ToString("yyyy");
+
+            DateTime fecha_salida = Convert.ToDateTime(anterior);
+
+            Console.WriteLine("La fecha del primero del mes anterior a la fecha ingresada es: {0}", fecha_salida);
+
+        }
     }
 }

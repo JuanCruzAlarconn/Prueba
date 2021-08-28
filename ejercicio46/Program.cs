@@ -10,6 +10,12 @@ namespace ejercicio46
     {
         static void Main(string[] args)
         {
+            Ejercicio practica = new Ejercicio();
+
+            practica.ejercicio46();
+
+            Console.WriteLine("Ingrese una tecla cualquiera para finalizar la ejecución del programa");
+            Console.ReadKey();
         }
     }
 }

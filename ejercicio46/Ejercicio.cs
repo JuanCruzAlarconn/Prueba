@@ -28,7 +28,7 @@ namespace ejercicio46
             do
             {
                 Console.WriteLine("\nIngrese el producto de la lista");
-                codigo = Convert.ToInt32(Console.ReadLine());
+                codigo = Convert.ToInt32(Console.ReadLine());//como no hay validaciones es muy ciomún tener que encontrar fallas de forma manual por lo que es muy cercano hallas tipos que no pudieron ser convertivos de la manera prevista
                 Console.WriteLine("\nIngrese la cantidad del producto {0} que compra", codigo);
                 cantidad = Convert.ToInt32(Console.ReadLine());
 

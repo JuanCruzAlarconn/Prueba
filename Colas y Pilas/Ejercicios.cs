@@ -107,20 +107,23 @@ namespace Colas_y_Pilas
         {
             string ingreso = "";
 
-            Console.WriteLine("Ingrese el nombre del paciente");
+            Console.WriteLine("\nIngrese el nombre del paciente");
             ingreso = Console.ReadLine();
 
             if(string.IsNullOrEmpty(caja1))
             {
                 caja1 = ingreso;
+                Console.WriteLine("\nEl paciente fue derivado a la caja 1");
             }
             else if (string.IsNullOrEmpty(caja2))
             {
                 caja2 = ingreso;
+                Console.WriteLine("\nEl paciente fue derivado a la caja 2");
             }
             else if(string.IsNullOrEmpty(caja3))
             {
                 caja3 = ingreso;
+                Console.WriteLine("\nEl paciente fue derivado a la caja 3");
             }
             else
             {

@@ -53,7 +53,7 @@ namespace Colas_y_Pilas
                 {
                     Console.WriteLine("\nHa ingresado un comando que no corresponde con ninguno de los disponibles");
                 }
-            }while(ingreso!="C" || ingreso!="c");
+            }while(!(ingreso=="C" || ingreso=="c"));
 
 
             Console.WriteLine("Elementos en lista de espera {0}", espera.Count);
@@ -65,7 +65,7 @@ namespace Colas_y_Pilas
 
         public void habilitar_caja()
         {
-            Console.WriteLine("Ingrese el número de caja que se ha habilitado");
+            Console.WriteLine("\nIngrese el número de caja que se ha habilitado");
             int numero = Convert.ToInt32(Console.ReadLine());
 
 

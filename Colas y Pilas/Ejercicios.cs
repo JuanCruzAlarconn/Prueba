@@ -56,7 +56,36 @@ namespace Colas_y_Pilas
             }while(!(ingreso=="C" || ingreso=="c"));
 
 
-            Console.WriteLine("Elementos en lista de espera {0}", espera.Count);
+            Console.WriteLine("\nElementos en lista de espera {0}", espera.Count);
+
+            if(string.IsNullOrEmpty(caja1))
+            {
+                Console.WriteLine("\nLa caja 1 se halla libre");
+            }
+            else
+            {
+                Console.WriteLine("\nDentro de la caja 1 el paciente {0} esta siendo atendido",caja1);
+            }
+
+
+            if (string.IsNullOrEmpty(caja2))
+            {
+                Console.WriteLine("\nLa caja 2 se halla libre");
+            }
+            else
+            {
+                Console.WriteLine("\nDentro de la caja 2 el paciente {0} esta siendo atendido", caja1);
+            }
+
+
+            if (string.IsNullOrEmpty(caja3))
+            {
+                Console.WriteLine("\nLa caja 3 se halla libre");
+            }
+            else
+            {
+                Console.WriteLine("\nDentro de la caja 3 el paciente {0} esta siendo atendido", caja1);
+            }
 
 
 

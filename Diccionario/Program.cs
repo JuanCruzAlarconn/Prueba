@@ -13,6 +13,8 @@ namespace Diccionario
             Ejercicios practica = new Ejercicios();
 
 
+            practica.ejercicio46();
+
             Console.WriteLine("Ingrese una tecla para finalizar con la ejecución del programa");
             Console.ReadKey();
         }

@@ -35,6 +35,7 @@ namespace Diccionario
             Console.WriteLine("\n*****************EL PROGRAMA HA FINALIZADO SATISFACTORIAMENTE***********************");
 
             //hay una cuestion que no esta definida de forma explicita, la carga de diferentes cantidades de un solo producto dentro de la lista, si quiero ingresar 2 debo de cargar dos veces dentro de la lista de producto lo elementos citados para que el sistema los tome y los considere como tal
+            //con el modelo de reciclado solo se puede tener un único elemento dentro de la carga, hay que crear un función de validación propia para poder encarar la 2º carga de la lista de productos
         }
 
         public void generar_pedido()

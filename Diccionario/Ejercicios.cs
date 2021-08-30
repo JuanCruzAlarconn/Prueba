@@ -103,6 +103,8 @@ namespace Diccionario
                 ingreso = Console.ReadLine();
                 flag = validar_precio(ingreso, ref precio);
 
+              
+
             } while (flag);
 
             precio = Convert.ToDecimal(ingreso); //para mayor seguridad le agrego un punto de conversión adicional
@@ -126,6 +128,7 @@ namespace Diccionario
             else if (precio==0)
             {
                 Console.WriteLine("\nHa decidido finalizar con la carga de precios");
+                flag = false;
             }
             else if (precio<0)
             {

@@ -12,9 +12,11 @@ namespace Manejo_de_archivos
         {
             Practica ejercicio = new Practica();
 
-            ejercicio.ejercicio49();
+            // ejercicio.ejercicio49();
 
-            ejercicio.ejercicio50();
+            // ejercicio.ejercicio50();
+
+            ejercicio.ejercicio52();
 
             Console.WriteLine("\nIngrese una tecla para finalizar con la ejecución del recurso");
             Console.ReadKey();

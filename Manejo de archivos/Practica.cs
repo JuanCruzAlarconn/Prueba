@@ -82,7 +82,7 @@ namespace Manejo_de_archivos
                 flag = validar_ingreso(ingreso);
                 procesar_comando(ingreso);
 
-            } while (ingreso=="E");
+            } while (ingreso!="E");
 
 
             Console.WriteLine("\nHA FINALIZADO LA EJECUCIÓN DEL PROGRAMA DE ADMINISTRACIÓN DEL REGISTRO DEL ALUMNOS\n");
@@ -159,7 +159,7 @@ namespace Manejo_de_archivos
 
             foreach(var a in alumnos)
             {
-                escribir.WriteLine("Nombre: {0} Nº de registro: {1}", a.Value, a.Value);
+                escribir.WriteLine("Nombre: {0} Nº de registro: {1}", a.Value, a.Key);
             }
 
             escribir.Close();
@@ -222,7 +222,7 @@ namespace Manejo_de_archivos
             bool flag = true;
             do
             {
-                Console.WriteLine("Ingrese el legajo del alumno a ingresar");
+                Console.WriteLine("\nIngrese el legajo del alumno a ingresar");
                 ingreso_registro = Console.ReadLine();
                 flag = validar_numero(ingreso_registro);
 
@@ -230,7 +230,7 @@ namespace Manejo_de_archivos
                 {
                     do
                     {
-                        Console.WriteLine("Ingrese el nombre del alumno con registro: {0}", ingreso_registro);
+                        Console.WriteLine("\nIngrese el nombre del alumno con registro: {0}", ingreso_registro);
                         ingreso_nombre = Console.ReadLine();
                         flag = validar_ingreso(ingreso_nombre);//si hay algo mal, debo de repetir el ciclo hasta ser correcto el ingreso
                     } while (flag);

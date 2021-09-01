@@ -12,6 +12,8 @@ namespace Manejo_de_archivos
         {
             Practica ejercicio = new Practica();
 
+            ejercicio.ejercicio49();
+
             Console.WriteLine("Ingrese una tecla para finalizar con la ejecución del recurso");
         }
     }

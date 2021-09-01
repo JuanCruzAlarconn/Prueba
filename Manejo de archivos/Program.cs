@@ -14,7 +14,10 @@ namespace Manejo_de_archivos
 
             ejercicio.ejercicio49();
 
-            Console.WriteLine("Ingrese una tecla para finalizar con la ejecución del recurso");
+            ejercicio.ejercicio50();
+
+            Console.WriteLine("\nIngrese una tecla para finalizar con la ejecución del recurso");
+            Console.ReadKey();
         }
     }
 }

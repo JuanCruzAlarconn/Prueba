@@ -39,5 +39,38 @@ namespace ejemplo_de_clase_02_09
                 }
             }
         }
+
+        public void ejercicio2()
+        {
+            List<string> lista_almacen = new List<string>();
+
+            lista_almacen.Add("queso");
+            lista_almacen.Add("salame");
+            lista_almacen.Add("aceituna");
+
+            string primero = lista_almacen[0];
+
+            Console.WriteLine("El primer elemento de la lista es {0}", primero);
+
+
+            //inicializar una matriz
+
+            int[,] matriz = new int[3, 3];//tres filas y tres columnas
+
+        }
+
+        
+
+        public void ejercicio3()
+        {
+            Dictionary<char, List<Persona>> agenda = new Dictionary<char, List<Persona>>();
+
+            agenda.Add('A', new List<Persona> ());//cuando inicializo una clase hay que ponerla en vacio para luego poder cargar elementos dentro del contexto
+            agenda.Add('B', new List<Persona>());
+            agenda.Add('C', new List<Persona>());
+            agenda.Add('D', new List<Persona>());
+            agenda.Add('E', new List<Persona>());
+
+        }
     }
 }

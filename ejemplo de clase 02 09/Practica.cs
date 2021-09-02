@@ -31,6 +31,13 @@ namespace ejemplo_de_clase_02_09
 
             }
 
+            foreach(KeyValuePair<int,string> x in personas)
+            {
+                if(x.Value=="Juan Cruz Alarcón")
+                {
+                    Console.WriteLine("El DNI de {0} es: {1}",x.Value,x.Key);
+                }
+            }
         }
     }
 }

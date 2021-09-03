@@ -72,5 +72,12 @@ namespace ejemplo_de_clase_02_09
             agenda.Add('E', new List<Persona>());
 
         }
+
+        public void ejercicio4()
+        {
+            Facultad.direccion = "Av. Cordoba 2550";
+            //statico es un elemento que cualquiera puede acceder pero es única e irrepetible dentro del sistema
+            //STATIC UNO SOLO DE ...
+        }
     }
 }

@@ -12,6 +12,8 @@ namespace Cambio_de_propiedades_de_una_lista
         {
             Practica ejercicio = new Practica();
 
+            ejercicio.ejercicio();
+
             Console.ReadKey();
         }
     }

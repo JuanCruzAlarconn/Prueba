@@ -75,6 +75,148 @@ namespace Ejercicios_Integrales
             }
         }
 
+        public void ver_cursos_asignados()
+        {
+            string ingreso_registro = "";
+            bool flag = true;
+
+            do
+            {
+                Console.WriteLine("\nIngrese el numero de registro del alumno del cual quiera conocer los cursos que tiene asignados");
+                ingreso_registro = Console.ReadLine();
+                flag = validar_asignacion(ingreso_registro);
+
+            } while (flag);
+
+            int registro = Convert.ToInt32(ingreso_registro);
+
+            Alumno alumno = lista_alumnos.Find(A => A.numero_registro == registro);
+
+            Console.WriteLine("\nListado de cursos que tiene asignado el alumno {0}", alumno.nombre_completo);
+
+            foreach(Curso curso in alumno.cursos_asignados)
+            {
+                Console.WriteLine("Código de curso: {0}", curso.codigo_curso);
+            }
+
+            Console.WriteLine("\nSe han mostrado satisfactoriamente todos los cursos que le fueron asignados a el alumno");
+
+        }
+
+
+        public void ver_alumnos_asignados()
+        {
+            string ingreso_curso = "";
+            bool flag = true;
+
+            do
+            {
+                Console.WriteLine("\nIngrese el código de curso al que quiera ver los alumnos asignados");
+                ingreso_curso = Console.ReadLine();
+                flag = validar_asignacion_curso(ingreso_curso);//evalua si el curso ingresado se corresponde con alguno de la lsita
+            } while (flag);
+
+            int codigo_curso = Convert.ToInt32(ingreso_curso);
+
+            Curso curso = lista_curso.Find(C => C.codigo_curso == codigo_curso);
+
+
+            Console.WriteLine("\nAlumnos que componen al curso {0}",curso.codigo_curso);
+
+            foreach(Alumno alumno in curso.lista_curso)
+            {
+                Console.WriteLine("Nombre: {0} Registro: {1}", alumno.nombre_completo,alumno.numero_registro);
+            }
+
+            Console.WriteLine("\nSe han mostrado satisfactoriamente cada uno de los diferente alumnos que integran el curso mencionado");
+
+        }
+
+
+        public void desasignar_alumno()
+        {
+            string ingreso_registro = "";
+            bool flag = true;
+
+            do
+            {
+                Console.WriteLine("\nIngrese el número de registro del alumno que desea desasignar");
+                ingreso_registro = Console.ReadLine();
+                flag = validar_asignacion(ingreso_registro);
+
+            } while (flag);
+
+            //hasta aca tenogo el registro del alumno que quiero desasignar a los cursos
+
+            int registro = Convert.ToInt32(ingreso_registro);
+
+            Alumno alumno = lista_alumnos.Find(A => A.numero_registro == registro);
+
+            flag = true;
+
+            string ingreso_curso = "";
+
+            do
+            {
+                Console.WriteLine("Ingrese el código del curso al que quiere desasignar al alumno {0}", alumno.nombre_completo);
+                ingreso_curso = Console.ReadLine();
+                flag = validar_desasignacion(ingreso_curso, alumno);
+
+            } while (flag);
+
+            int codigo_curso = Convert.ToInt32(ingreso_curso);
+
+            Curso curso = lista_curso.Find(C => C.codigo_curso == codigo_curso);
+
+            alumno.cursos_asignados.Remove(curso);
+            curso.lista_curso.Remove(alumno);
+
+            Console.WriteLine("\nSe ha removido satisfactoriamente al alumno del curso seleccionado");
+
+
+        }
+
+        public bool validar_desasignacion(string ingreso, Alumno alumno)
+        {
+            bool flag = true;
+
+           
+            if (string.IsNullOrEmpty(ingreso))
+            {
+                Console.WriteLine("\nEl numero de curso no puede ser vacio");
+            }
+            else if (!Int32.TryParse(ingreso, out int salida))
+            {
+                Console.WriteLine("\nDebe de ingresar un tipo numérico dentro del numero de curso");
+            }
+            else if (salida <= 0)
+            {
+                Console.WriteLine("\nEl número de curso debe de ser un número positivo");
+            }
+            else if (lista_curso.Find(C => C.codigo_curso == salida) == null)
+            {
+                Console.WriteLine("\nEl curso introducido no se corresponde con ninguno de los cursos disponibles dentro de la base del sistema");
+            }
+             
+            else
+            {
+              Alumno hallado=  lista_curso.Find(C => C.codigo_curso == salida).lista_curso.Find(A => A.numero_registro == alumno.numero_registro);
+
+                if(hallado==alumno)
+                {
+                    flag = true;
+                }
+                else
+                {
+                    Console.WriteLine("El alumno indicado no esta cursando este curso por lo que no es posible deasginar de un curso al que no esta asignado");
+                }
+            }
+
+            return flag;
+
+
+        }
+
         public void asignar_alumno()
         {
             string ingreso_registro = "";
@@ -104,12 +246,16 @@ namespace Ejercicios_Integrales
 
             int codigo_curso = Convert.ToInt32(ingreso_curso);
 
-            Curso c = lista_curso.Find(C => C.codigo_curso == codigo_curso);//solamente te da una copia del elemento al que hice una incurrencia dentro del contexto de la lista de cursos
+            Curso c = lista_curso.Find(C => C.codigo_curso == codigo_curso);//Se genera un enlace sobre el objeto por lo que puedo modificar sus propiedades
 
-            lista_alumnos = lista_alumnos.Select(A => { A.cursos_asignados.Add(c); return A; }).ToList(); //SINTAXIS PARA MODIFICAR LAS PROPIEDADES DE ELEMENTOS DENTRO UNA LISTA
-            lista_curso = lista_curso.Select(curso => { curso.lista_curso.Add(a); return curso; }).ToList();
+            //a es el alumno que quiro asignar dentro del curos c
 
-            Console.WriteLine("\nLa asignación de curso fue exitosa");
+            a.cursos_asignados.Add(c);
+            c.lista_curso.Add(a);
+
+            Console.WriteLine("\nSe llevo a cabo la asignación del curso correspondiente");
+
+           
 
         }
 

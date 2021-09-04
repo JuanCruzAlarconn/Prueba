@@ -58,7 +58,7 @@ namespace Ejercicios_Integrales
                     ver_cursos_asignados();//Toma un alumno y da a cuantos cursos se halla asignado
                     break;
                 case 'g':
-                    cantida_alumnos_por_curso();//devulve la cantida de alumnos que tienen todos los cursos que se dieron de alta dentro del programa
+                    cantidad_alumnos_por_curso();//devulve la cantida de alumnos que tienen todos los cursos que se dieron de alta dentro del programa
                     break;
                 case 'h':
                     cantidad_cursos_por_alumno();//devulve una lista de todos los alumnos en donde se indica cuantos cursos asginados tiene cada uno de ello
@@ -74,6 +74,31 @@ namespace Ejercicios_Integrales
 
             }
         }
+
+        public void cantidad_cursos_por_alumno()
+        {
+            Console.WriteLine("\nA continuación se listaran a todos los alumnos que componen el listado del programa con su correspondiente cantidad de cursos asignados");
+
+            foreach(Alumno alumno in lista_alumnos)
+            {
+                Console.WriteLine("Alumno :{0} Nº de registro: {1} Cantida de cursos asignados: {2}", alumno.nombre_completo, alumno.numero_registro, alumno.cursos_asignados.Count);
+            }
+
+            Console.WriteLine("\nSe han mostrado satisfactoriamente todos los alumnos que componen el listado de alumnos del programa con sus cantidad de cursos asignados");
+        }
+
+        public void cantidad_alumnos_por_curso()
+        {
+            Console.WriteLine( "\nA continuación se pasara a mostrar la cantidad de alumnos que tiene asignado cada uno de los cursos que forma parte del program");
+
+            foreach(Curso curso in lista_curso)
+            {
+                Console.WriteLine("Código de curso: {0} cantidad de alumnos asignados: {1}", curso.codigo_curso, curso.lista_curso.Count);
+            }
+
+            Console.WriteLine("\nSe ha realizado satisfactoriamente el recorrido por sobre todos los cursos disponibles");
+        }
+
 
         public void ver_cursos_asignados()
         {

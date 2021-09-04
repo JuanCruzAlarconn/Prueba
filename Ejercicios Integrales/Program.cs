@@ -12,6 +12,8 @@ namespace Ejercicios_Integrales
         {
             Practica ejercicio = new Practica();
 
+            ejercicio.ejercicio54();
+
             Console.WriteLine(  "\nIngrese cualquier tecla para finalizar con la ejecución");
             Console.ReadKey();
         }

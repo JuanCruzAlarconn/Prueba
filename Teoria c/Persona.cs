@@ -121,6 +121,11 @@ namespace Teoria_c
                     continue;
                 }
 
+                if(ingreso_nombre.Any(char.IsDigit))
+                {
+                    Console.WriteLine("\nEl nombre de la persona no puede contener elementos numéricos");
+                }
+
             }
         }
 

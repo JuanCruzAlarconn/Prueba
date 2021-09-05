@@ -35,5 +35,17 @@ namespace Teoria_c
 
             Agenda.dar_baja(persona);
         }
+
+        public static void modificar_persona()
+        {
+            var persona = Persona.seleccionar_persona(); //uso un método estatico
+            persona.modificar();//Es simplemente un metodo de instanciación común y corriente
+            Agenda.actualizar();
+
+        }
+
+        //sintaxis de continue vuelve a la primera linea del bloque por lo que repite el ciclo
+        //Es mucho más eficiente para el manejo de errores que el do con las validaciones aparte
+
     }
 }

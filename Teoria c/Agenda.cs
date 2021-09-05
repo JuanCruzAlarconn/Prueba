@@ -13,8 +13,21 @@ namespace Teoria_c
             throw new NotImplementedException();//con esto no me arroja error por no tener desarrollada la porción de código
         }
 
-        public static void baja_persona(Persona persona)
+        public static void dar_baja(Persona persona)
         {
+            throw new NotImplementedException();
+        }
+
+        public static void actualizar()
+        {
+            throw new NotImplementedException();
+
+        }
+
+        public static bool existe_dni(int dni)
+        {
+            //TODO: verificar si el dni indicado existe dentro de la agenda
+
             throw new NotImplementedException();
         }
     }

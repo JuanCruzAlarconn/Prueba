@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "teoria 2", "teoria 2.csproj", "{D6FE4429-461C-4DFF-A9E9-92C11B0F417E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6FE4429-461C-4DFF-A9E9-92C11B0F417E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6FE4429-461C-4DFF-A9E9-92C11B0F417E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6FE4429-461C-4DFF-A9E9-92C11B0F417E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6FE4429-461C-4DFF-A9E9-92C11B0F417E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66C8E3C3-F369-4A0E-8250-8CDBB4A150C9}
+	EndGlobalSection
+EndGlobal

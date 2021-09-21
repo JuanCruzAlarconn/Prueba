@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C91C1755-508B-4DE8-B937-451643F48F92}</ProjectGuid>
+    <ProjectGuid>{4779F7EF-1F53-4E51-82CC-CABFEEBC9125}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Colas_y_Pilas</RootNamespace>
-    <AssemblyName>Colas y Pilas</AssemblyName>
+    <RootNamespace>ejercicio53</RootNamespace>
+    <AssemblyName>ejercicio53</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,11 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agenda.cs" />
     <Compile Include="Alumno.cs" />
-    <Compile Include="Ejercicios.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registro.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -168,6 +168,26 @@ namespace Colas_y_Pilas
             Console.WriteLine("\nA. Ingreso de nuevo paciente");
             Console.WriteLine("\nB.Liberar caja");
             Console.WriteLine("\nC.Finalizar la ejecución del programa\n");
+       }
+
+        public void ejercicio45()
+        {
+            Console.WriteLine("\nAgregar nuevo alumno");
+            var a = Alumno.agregar_alumno();
+            var b = Alumno.agregar_alumno();
+            var c = Alumno.agregar_alumno();
+
+            Registro.agregar_alumno(a);
+            Registro.agregar_alumno(b);
+            Registro.agregar_alumno(c);
+
+            Console.WriteLine("\nSe procede a la busqueda del alumno con registro 10");
+
+            var aux = Registro.buscar_alumno(10);
+
+            Console.WriteLine("Nombre: {0} Apellido: {1} Nº registro: {2}", aux.nombre, aux.apellido, aux.registro);
+
         }
+           
     }
 }

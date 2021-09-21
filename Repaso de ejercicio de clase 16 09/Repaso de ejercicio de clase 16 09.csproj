@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C91C1755-508B-4DE8-B937-451643F48F92}</ProjectGuid>
+    <ProjectGuid>{D0E9C9C9-6156-42A3-9BD4-B28F86A732F5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Colas_y_Pilas</RootNamespace>
-    <AssemblyName>Colas y Pilas</AssemblyName>
+    <RootNamespace>Repaso_de_ejercicio_de_clase_16_09</RootNamespace>
+    <AssemblyName>Repaso de ejercicio de clase 16 09</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,11 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alumno.cs" />
-    <Compile Include="Ejercicios.cs" />
+    <Compile Include="Producto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registro.cs" />
+    <Compile Include="Venta.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

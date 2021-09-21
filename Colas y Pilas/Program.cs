@@ -12,7 +12,7 @@ namespace Colas_y_Pilas
         {
             Ejercicios practica = new Ejercicios();
 
-            practica.ejercicio47();
+            practica.ejercicio45();
 
             Console.WriteLine("\nIngrese una tecla para finalizar con la ejecución del programa como tal");
             Console.ReadKey();

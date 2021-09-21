@@ -31,12 +31,71 @@ namespace Ejercicio_estructura_de_datos
 
         private static int asignar_telefono()
         {
-            throw new NotImplementedException();
+            string ingreso;
+            int telefono;
+
+            do
+            {
+                Console.WriteLine("\nIngrese el número de teléfono");
+                ingreso = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(ingreso))
+                {
+                    Console.WriteLine("\nEl número de teléfono no puede permanecer vacio");
+                    continue;
+                }
+
+                if (!Int32.TryParse(ingreso, out telefono))
+                {
+                    Console.WriteLine("\nEl numero de telefono debe de ser numérico");
+                    continue;
+                }
+
+                if (ingreso.Length < 6 || ingreso.Length > 8)
+                {
+                    Console.WriteLine("\nEl número de teléfono debe tener entre 6 a 8 dígitos");
+                    continue;
+
+                }
+                break;
+            } while (true);
+
+            return telefono;
         }
 
-        private static int asignar_codigo(string v)
+        private static int asignar_codigo(string codigo)
         {
-            throw new NotImplementedException();
+            string ingreso;
+            int cod;
+
+            do
+            {
+                Console.WriteLine("\nIngrese el código de {0} del telefono", codigo);
+                ingreso = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(ingreso))
+                {
+                    Console.WriteLine("\nEl código de {0} no puede permanecer vacio");
+                    continue;
+                }
+
+                if (!Int32.TryParse(ingreso, out cod))
+                {
+                    Console.WriteLine("\nEl código de {0} debe de ser numérico");
+                    continue;
+                }
+
+                if (ingreso.Length != 2)
+                {
+                    Console.WriteLine("\nEl código de área debe de contener unicamente 2 dígitos");
+                    continue;
+                }
+
+                break;
+
+            } while (true);
+
+            return cod;
         }
 
         private static string asignar_tipo()

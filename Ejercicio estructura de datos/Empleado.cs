@@ -14,7 +14,7 @@ namespace Ejercicio_estructura_de_datos
         public DateTime fecha_ingreso { get; set; }
         public DateTime fecha_egreso { get; set; }
 
-        public int antiguedad { get; set; }
+        public TimeSpan antiguedad { get; set; }
 
         public static Empleado Crear()
         {
@@ -33,14 +33,52 @@ namespace Ejercicio_estructura_de_datos
 
         }
 
-        private static int asignar_antiguedad(DateTime fecha_ingreso, DateTime fecha_egreso)
+        private static TimeSpan asignar_antiguedad(DateTime fecha_ingreso, DateTime fecha_egreso)
         {
-            throw new NotImplementedException();
+            return fecha_egreso - fecha_ingreso;
         }
 
         private static DateTime asignar_fecha(string fecha)
         {
-            throw new NotImplementedException();
+            string ingreso;
+
+            DateTime f;
+            do
+            {
+                Console.WriteLine("\nIngrese la fecha de {0}", fecha);
+                ingreso = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(ingreso))
+                {
+                    Console.WriteLine("\nNo puede dejar la fecha de {0} vacia", fecha);
+                    continue;
+                }
+
+                if (!DateTime.TryParse(ingreso, out f))
+                {
+                    Console.WriteLine("\nDebe de ingresar una fecha con un formato válido");
+                    continue;
+                }
+                
+                if(fecha=="ingreso" && f>DateTime.Now)
+                    {
+                        Console.WriteLine("\nLa fecha de ingreso no debe de ser superior a la fecha actual");
+                        continue;
+                    }
+
+                if(fecha=="egreso" && f>DateTime.Now)
+                {
+                    Console.WriteLine("\nLa fecha de egreso de debe de ser superior a la fecha actual");
+                    continue;
+                }
+                
+
+                break;
+            } while (true);
+
+            return f;
+
+
         }
 
         private static int asignar_legajo()

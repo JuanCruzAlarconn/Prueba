@@ -44,11 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auto.cs" />
+    <Compile Include="Cliente.cs" />
     <Compile Include="Empleado.cs" />
+    <Compile Include="Factura.cs" />
     <Compile Include="Numero_Telefono.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Persona4.cs" />
     <Compile Include="Producto.cs" />
+    <Compile Include="Producto6.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

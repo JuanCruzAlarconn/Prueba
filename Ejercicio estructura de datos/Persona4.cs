@@ -12,7 +12,7 @@ namespace Ejercicio_estructura_de_datos
         public string nombre { get; set; }
         public string apellido { get; set; }
 
-        public List<Numero_Telefono> numeros = new List<Numero_Telefono>();
+        public List<Numero_Telefono> numeros { get; set; }
 
         public static Persona4 Crear()
         {
@@ -31,7 +31,33 @@ namespace Ejercicio_estructura_de_datos
 
         private static List<Numero_Telefono> asignar_numeros()
         {
-            throw new NotImplementedException();
+            Numero_Telefono num = new Numero_Telefono();
+            List<Numero_Telefono> numeros = new List<Numero_Telefono>();
+            do
+            {
+                Console.WriteLine("\nIngrese s para ingresar y n para dejar de ingresar números");
+                if (Console.ReadKey(true).Key == ConsoleKey.N)
+                {
+                    Console.WriteLine("\nHa decidido dejar de agregar nuevos campos telefónicos");
+                    break;
+                }
+
+                if (Console.ReadKey(true).Key == ConsoleKey.S)
+                {
+                    num = Numero_Telefono.Crear();
+                    numeros.Add(num);
+                    Console.WriteLine("\nSe ha agregado un nuevo número telefónico");
+                    continue;
+                }
+
+                if (Console.ReadKey(true).Key != ConsoleKey.N || Console.ReadKey(true).Key != ConsoleKey.S)
+                {
+                    Console.WriteLine("\nNinguna de las opciones ingresadas concuerda con las disponibles");
+                    continue;
+                }
+            } while (true);
+
+            return numeros;
         }
 
         private static int asignar_dni()

@@ -8,6 +8,7 @@ namespace Ejercicio_estructura_de_datos
 {
     class Persona
     {
+        public static readonly List<Persona> lista_persona = new List<Persona>();
         public int documento { get; private set; }
 
         public string nombre { get; set; }
@@ -24,6 +25,8 @@ namespace Ejercicio_estructura_de_datos
             persona.nombre = asignar_campo("Nombre");
             persona.apellido = asignar_campo("Apellido");
             persona.fecha_nacimiento = asignar_fecha();
+
+            lista_persona.Add(persona);
 
             Console.WriteLine("\nSe ha creado satisfactoriamente una nueva instancia de persona");
 
@@ -91,6 +94,7 @@ namespace Ejercicio_estructura_de_datos
                     continue;
                 }
 
+             
 
                 break;
 
@@ -134,6 +138,16 @@ namespace Ejercicio_estructura_de_datos
                     continue;
 
                 }
+
+                Persona persona = lista_persona.Find(P => P.documento == dni);
+
+                if(persona!=null)
+                {
+                    Console.WriteLine("\nYa exite otra persona cargada con el mismo número de dni");
+                    continue;
+
+                }
+
 
                 break;
 

@@ -28,6 +28,8 @@ namespace Ejercicio_estructura_de_datos
             producto.precio = asignar_numerico("precio");
             producto.lista_componentes = asignar_componenetes();
 
+            lista_producto.Add(producto);
+
 
             Console.WriteLine("\nSe ha creado una nueva instancia de producto");
             return producto;

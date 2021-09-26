@@ -12,9 +12,34 @@ namespace Ejercicio_estructura_de_datos
         public string nombre { get; set; }
         public string apellido { get; set; }
         public DateTime fecha_ingreso { get; set; }
-        public DateTime fecha_egreso { get; set; }
+        public Nullable<DateTime> fecha_egreso { get; set; }//podría no existir dentro del contexto, podría tener situaciones en donde halla elementos que quiero devolver un value type más el null
+        //al no verse asignado se puede trabajar de forma conjunta teniendo en cuenta que si no fue asignado quda en null el atributo
 
-        public TimeSpan antiguedad { get; set; }
+      //  public DateTime? fecha_egreso { get; set; } forma resumida de poder generar un value type que tome null como posibilidad en caso de no haber asignado
+
+        public TimeSpan? antiguedad { get
+
+            {
+                var diferencia=0;
+                if(fecha_egreso==null)
+                {
+                   diferencia= DateTime.Now.Year - fecha_ingreso.Year);
+
+                    if(DateTime.Now.Month<fecha_ingreso.Month || DateTime.Now.Month== fecha_ingreso.Month &&DateTime.Now.Day<fecha_ingreso.Day)
+                    {
+                        diferencia--;
+                    }
+                }
+                else
+                {
+                    diferencia=fecha_egreso.Value.Year-fecha_ingreso.Year);
+                    //cuidado la fecha de egreso es nullable hay que agregar value para poder operar
+
+                    if(DateTime.Now.Month < fecha_ingreso.Month || DateTime.Now.Month == fecha_ingreso.Month && DateTime.Now.Day < fecha_ingreso.Day)
+                }
+                return diferencia;
+            } }//puede ser nulo hay posibilidad que uno de los factores de la resta sea nulo
+
 
         public static Empleado Crear()
         {

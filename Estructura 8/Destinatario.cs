@@ -13,15 +13,15 @@ namespace Estructura_8
         public string dirección { get; set; }
 
 
-        public Remitente Crear()
+        public static Destinatario Crear()
         {
-            Remitente remitente = new Remitente();
+            Destinatario destinatario= new Destinatario();
 
-            remitente.razon_social = asignar("razon social");
-            remitente.cuit = asignar_cuit();
-            remitente.dirección = asignar("dirección");
+           destinatario.razon_social = asignar("razon social");
+            destinatario.cuit = asignar_cuit();
+           destinatario.dirección = asignar("dirección");
 
-            return remitente;
+            return destinatario;
         }
 
         private static string asignar(string campo)

@@ -14,15 +14,56 @@ namespace Estructura_8
         public int numero_calle { get; set; }
         public int numero_piso { get; set; }
 
-        public static Remitente Crear()
+        public static Destino Crear()
         {
-            Remitente remitente = new Remitente();
+            Destino destino= new Destino();
 
-            remitente.razon_social = asignar("razon social");
-            remitente.cuit = asignar_cuit();
-            remitente.dirección = asignar("dirección");
+            destino.pais = asignar_pais();
+            destino.localidad = asignar("localidad");
+            destino.calle = asignar("calle");
+            destino.numero_calle = asignar_numérico("número de calle");
+            destino.numero_piso = asignar_numérico("número de piso");
 
-            return remitente;
+            return destino;
+
+        }
+
+        private static string asignar_pais()
+        {
+            string ingreso;
+
+            do
+            {
+                Console.WriteLine("\nIngrese dos letras en MAYUSCULA para poder identificar al pais");
+                ingreso = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(ingreso))
+                {
+                    Console.WriteLine("\nEl código de pais no puede permanecer en vacio");
+                    continue;
+
+                }
+
+                if (ingreso.Length != 2)
+                {
+                    Console.WriteLine("\nEl código de pais debe de ser de 2 letras unicamente");
+                    continue;
+                }
+
+                string validar = ingreso.ToUpper();
+
+                if (validar != ingreso)
+                {
+                    Console.WriteLine("\nLas 2 letras que identifican al pais deben de estar en MAYÚSCULA");
+                    continue;
+                }
+
+
+                break;
+            } while (true);
+
+            return ingreso;
+
         }
 
         private static string asignar(string campo)
@@ -31,7 +72,35 @@ namespace Estructura_8
 
             do
             {
-                Console.WriteLine("\nIngrese el campo {0} del remitente", campo);
+                Console.WriteLine("\nIngrese el campo {0}", campo);
+                ingreso = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(ingreso))
+                {
+                    Console.WriteLine("\nEl campo {0} no debe de permanecer vacio");
+                    continue;
+                }
+
+                if (ingreso.Length > 120)
+                {
+                    Console.WriteLine("\nEl campo {0} no puede tener más de 120 caracteres");
+                    continue;
+                }
+                break;
+            } while (true);
+
+            return ingreso;
+
+        }
+
+        private static int asignar_numérico(string campo)
+        {
+            string ingreso;
+            int numero;
+
+            do
+            {
+                Console.WriteLine("\nIngrese el campo {0}", campo);
                 ingreso = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(ingreso))
@@ -40,51 +109,27 @@ namespace Estructura_8
                     continue;
                 }
 
-                if (ingreso.Length > 30 && campo == "razon social")
+                if (!Int32.TryParse(ingreso, out numero))
                 {
-                    Console.WriteLine("\nLa razón social no puede tener mas de 30 elementos dentro de su estructura");
+                    Console.WriteLine("\nEl campo {0} debe de ser numérico", campo);
                     continue;
-
                 }
 
+                if (ingreso.Length > 10 && campo == "número de calle")
+                {
+                    Console.WriteLine("\nEl campo {0} no puede contener más de 10 caracteres", campo);
+                    continue;
+                }
+
+                if (ingreso.Length > 5 && campo == "número de piso")
+                {
+                    Console.WriteLine("\nEl campo {0} no puede contener más de 5 caracteres", campo);
+                    continue;
+                }
                 break;
             } while (true);
 
-            return ingreso;
-        }
-
-        private static int asignar_cuit()
-        {
-            string ingreso;
-            int cuit;
-
-            do
-            {
-                Console.WriteLine("\nIngrese el número de cuit");
-                ingreso = Console.ReadLine();
-
-                if (string.IsNullOrWhiteSpace(ingreso))
-                {
-                    Console.WriteLine("\nEl número de cuit no puede permanecer vacio");
-                    continue;
-                }
-
-                if (!Int32.TryParse(ingreso, out cuit))
-                {
-                    Console.WriteLine("\nEl cuit debe de ser numérico");
-                    continue;
-                }
-
-                if (ingreso.Length > 30)
-                {
-                    Console.WriteLine("\nEl número de cuit no puede contener más de 30 caracteres numéricos");
-                    continue;
-                }
-
-                break;
-            } while (true);
-
-            return cuit;
+            return numero;
         }
     }
 }

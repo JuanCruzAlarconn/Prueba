@@ -28,7 +28,7 @@ namespace Estructura_8
             bulto.peso = asignar("peso");
             bulto.cantidad = asignar("cantidad");
 
-            bulto.dimension = new Dimension();
+            bulto.dimension = Dimension.Crear();
 
             return bulto;
         }

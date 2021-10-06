@@ -8,6 +8,8 @@ namespace Estructura_8
 {
     class Carta_Porte
     {
+        
+
         public Remitente remitente { get; set; }
         public Destinatario destinatario { get; set; }
         public Origen origen { get; set; }
@@ -29,6 +31,14 @@ namespace Estructura_8
             Console.WriteLine("\nSe ha creado satisfactoriamente una nueva instancia de la carta de porte dentro del sistema");
 
             return carta_porte;
+        }
+
+        public string información()
+        {
+            string linea="";
+            //Hay que poder definir una elemento que permita convertir a texto mucho de los aspectos de la estrucutra de la clase en si, para que dentro del menú principal unicamente se llame al método y se autocomplete la información en consecuencia
+
+            return linea;
         }
     }
 }

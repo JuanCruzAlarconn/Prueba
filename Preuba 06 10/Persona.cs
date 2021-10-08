@@ -36,7 +36,7 @@ namespace Preuba_06_10
 
         public void escribir_texto(StreamWriter escribir_persona, StreamWriter escribir_telefono)
         {
-            string linea = nombre + ";" + dni;
+            string linea = dni+";"+nombre;
             escribir_persona.WriteLine(linea);
 
             foreach(var tel in lista_telefono)

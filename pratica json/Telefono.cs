@@ -39,7 +39,7 @@ namespace pratica_json
                     continue;
                 }
 
-                if (Int32.TryParse(ingreso, out salida))
+                if (!Int32.TryParse(ingreso, out salida))
                 {
                     Console.WriteLine("\nEl número de teléfono debe de ser numérico");
                     continue;

@@ -29,10 +29,16 @@ namespace Desarrollo_de_clases
             transporte.categoria = asignar_categoria();
             transporte.estado = asignar_estado();
             transporte.kilometros_recorridos_viaje = 0;
+            transporte.codigo_agencia = asignar_agencia();
 
             return transporte;
 
 
+        }
+
+        private static int? asignar_agencia()
+        {
+            throw new NotImplementedException();
         }
 
         private static int asignar_codigo()

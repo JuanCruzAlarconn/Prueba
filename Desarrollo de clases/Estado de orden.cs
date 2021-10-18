@@ -32,9 +32,9 @@ namespace Desarrollo_de_clases
         {
             throw new NotImplementedException();
         }
-        public void modificar_estado (string nuevo_estado)
+        public void actualizar_estado ()
         {
-            this.estado = nuevo_estado;
+            throw new NotImplementedException();
 
         }
 

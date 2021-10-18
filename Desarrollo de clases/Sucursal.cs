@@ -15,7 +15,7 @@ namespace Desarrollo_de_clases
 
         public List<Orden_de_servicio> ordenes_asignadas {get; set;} //A medida que le van llegando los pedidos los almancenan en una lista 
        
-        public List<Estado_de_orden> estado_ordenes// definido por el código de la orden más el estado de la misma definido por el tipo string
+        public List<Estado_de_orden> estado_ordenes { get; set; }// definido por el código de la orden más el estado de la misma definido por el tipo string
 
         public static Sucursal crear()
         {

@@ -43,7 +43,7 @@ namespace Desarrollo_de_clases
             orden_de_servicio.modo_entrega = asignar_modo_entrega();
             orden_de_servicio.modo_retiro = asignar_modo_retiro();
             orden_de_servicio.urgente = asignar_urgencia();
-            orden_de_servicio.codigo_agencia = asignar_agencia();
+        
             orden_de_servicio.codigo_sucursal = asignar_sucursal();
 
             return orden_de_servicio;
@@ -68,7 +68,7 @@ namespace Desarrollo_de_clases
             throw new NotImplementedException();
         }
 
-       
+
         public string consultar_estado()
         {
             //FUNCIÓN PRINCIPAL
@@ -76,38 +76,62 @@ namespace Desarrollo_de_clases
             var lista = Orden_de_servicio.abrir_archivo();
             string estado = "";
 
-            foreach(var orden in lista)
+            foreach (var orden in lista)
             {
-                if(orden.codigo==this.codigo)
+                if (orden.codigo == this.codigo)
                 {
-                    
-                    
-                        var transporte = Transporte.hallar(Convert.ToInt32(this.codigo_transporte_asignado));
 
-                        if(transporte.estado_viaje()== "asignado, pero aun no inicio el viaje")
-                        {
-                            estado = "\nEl paquete fue asignado satisfactoriamente a una unidad de traslado, pero la misma aún no ha iniciado su viaje hacia la sucursal";
-                        }
 
-                        if(transporte.estado_viaje()=="en curso")
-                        {
-                            estado = "\nEl paquete se halla en curso dentro de su viaje para poder llegar a destino";
-                        }
+                    var transporte = Transporte.hallar(Convert.ToInt32(this.codigo_transporte_asignado));
 
-                        if(transporte.estado_viaje()=="fin")
-                        {
+                    if (transporte.estado_viaje() == "asignado, pero aun no inicio el viaje")
+                    {
+                        estado = "El paquete fue asignado satisfactoriamente a una unidad de traslado, pero la misma aún no ha iniciado su viaje hacia la sucursal";
+                    }
+
+                    if (transporte.estado_viaje() == "en curso")
+                    {
+                        estado = "El paquete se halla en curso dentro de su viaje para poder llegar a destino";
+                    }
+
+                    if (transporte.estado_viaje() == "fin")
+                    {
                         var sucursal = Sucursal.hallar(codigo_sucursal);
 
+                        string estado_sucursal = sucursal.consultar_estado(codigo);
 
+                        if (estado_sucursal == "recibido dentro de la sucursal")
+                        {
+                            estado = "El paquete se halla dentro de la sucursal a la que fue designada";
                         }
 
-                    
+                        if (estado_sucursal == "en camino a domicilio")
+                        {
+
+                            estado = "El paquete se halla en camino a ser entregado a domicilio";
+                        }
+
+                        if (estado_sucursal == "entregado en domicilio")
+                        {
+                            estado = "El paquete fue entregado a domicilio";
+                        }
+
+                        break;
+
+
+                    }
+
+
                 }
+
             }
 
-            throw new NotImplementedException();
+            return estado;
 
         }
+
+
+
 
         private static bool asignar_urgencia()
         {

@@ -16,6 +16,8 @@ namespace Desarrollo_de_clases
         public int? codigo_orden_asignada { get; set; }
         public decimal kilometros_recorridos_viaje { get; set; }//Debería de verse actualizado periodicamente a partir de una función que cumpla con ciertos ciclos de tiempo
         public bool fin_de_viaje { get; set; }//campo que unicamente lo puede decir el conductor una vez que se llego a destino es decir a la sucursal mencionada
+
+        public int codigo_sucursal { get; set; }
         public static Transporte crear()
         {
             Transporte transporte = new Transporte();
@@ -24,14 +26,17 @@ namespace Desarrollo_de_clases
             transporte.categoria = asignar_categoria();
             transporte.estado = asignar_estado();
             transporte.kilometros_recorridos_viaje = 0;
-            transporte.codigo_agencia = asignar_agencia();
+            transporte.codigo_sucursal = asignar_sucursal();
 
             return transporte;
 
 
         }
 
-        
+        private static int asignar_sucursal()
+        {
+            throw new NotImplementedException();
+        }
 
         private static int asignar_codigo()
         {

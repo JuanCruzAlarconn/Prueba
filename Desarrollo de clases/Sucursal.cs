@@ -64,6 +64,24 @@ namespace Desarrollo_de_clases
             return sucursal;
         }
 
-     
+        public string consultar_estado(int codigo_orden)
+        {
+            string salida = "";
+
+            foreach(var estado in estado_ordenes)
+            {
+                if(estado.codigo_orden==codigo_orden)
+                {
+                    salida = estado.estado;
+                    break;
+                }
+            }
+
+            return salida;
+
+
+
+        }
+
     }
 }

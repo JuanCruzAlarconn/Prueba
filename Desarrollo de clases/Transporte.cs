@@ -15,7 +15,7 @@ namespace Desarrollo_de_clases
         public string estado { get; set; } //habla del estado de la unidad si puede seguir prestando servicio o debe de remitirse a mentenimiento
         public int? codigo_orden_asignada { get; set; }
         public decimal kilometros_recorridos_viaje { get; set; }//Debería de verse actualizado periodicamente a partir de una función que cumpla con ciertos ciclos de tiempo
-        public bool? fin_de_viaje { get; set; }//campo que unicamente lo puede decir el conductor una vez que se llego a destino es decir a la sucursal mencionada
+        public bool fin_de_viaje { get; set; }//campo que unicamente lo puede decir el conductor una vez que se llego a destino es decir a la sucursal mencionada
         public static Transporte crear()
         {
             Transporte transporte = new Transporte();
@@ -106,6 +106,50 @@ namespace Desarrollo_de_clases
 
 
             throw new NotImplementedException();
+
+        }
+
+        public static Transporte hallar(int codigo)
+        {
+            var lista = Transporte.abrir_archivo();
+            var transporte = new Transporte();//envío una copia de la información
+
+            foreach(var t in lista)
+            {
+                if(t.codigo==codigo)
+                {
+                    transporte = t;
+                    break;
+                }
+            }
+
+            return transporte;
+        }
+
+        public string estado_viaje()
+        {
+            string estado = "";
+
+            if(kilometros_recorridos_viaje==0)
+            {
+                estado = "asignado, pero aun no inicio el viaje";
+            }
+
+            if(kilometros_recorridos_viaje!=0 && fin_de_viaje==false)
+            {
+                estado = "en curso";
+            }
+
+            if(kilometros_recorridos_viaje!=0 && fin_de_viaje==true)
+            {
+                estado = "fin";
+            }
+
+            return estado;
+
+
+
+            
 
         }
        

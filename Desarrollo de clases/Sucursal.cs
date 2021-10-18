@@ -13,6 +13,10 @@ namespace Desarrollo_de_clases
         public Punto_geografico ubicacion { get; set; }
         public int codigo { get; set; }
 
+        public List<Orden_de_servicio> ordenes_asignadas {get; set;} //A medida que le van llegando los pedidos los almancenan en una lista 
+       
+        public List<Estado_de_orden> estado_ordenes// definido por el código de la orden más el estado de la misma definido por el tipo string
+
         public static Sucursal crear()
         {
             Sucursal sucursal = new Sucursal();
@@ -42,5 +46,24 @@ namespace Desarrollo_de_clases
             return lista_surcursal;
 
         }
+
+        public static Sucursal hallar(int codigo)
+        {
+            var lista = abrir_archivo();
+            var sucursal = new Sucursal();//envío una copia de la información
+
+            foreach(var s  in lista)
+            {
+                if(s.codigo==codigo)
+                {
+                    sucursal = s;
+                    break;
+                }
+            }
+
+            return sucursal;
+        }
+
+     
     }
 }

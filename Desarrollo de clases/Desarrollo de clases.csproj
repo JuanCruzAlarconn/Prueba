@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agencia.cs" />
+    <Compile Include="Estado de orden.cs" />
     <Compile Include="Orden de servicio.cs" />
     <Compile Include="Paquete.cs" />
     <Compile Include="Program.cs" />

@@ -131,7 +131,7 @@ namespace Desarrollo_de_clases
             return transporte;
         }
 
-        public string estado_viaje()
+        public string ver_estado_viaje()
         {
             string estado = "";
 

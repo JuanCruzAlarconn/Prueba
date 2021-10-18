@@ -84,17 +84,17 @@ namespace Desarrollo_de_clases
 
                     var transporte = Transporte.hallar(Convert.ToInt32(this.codigo_transporte_asignado));
 
-                    if (transporte.estado_viaje() == "asignado, pero aun no inicio el viaje")
+                    if (transporte.ver_estado_viaje() == "asignado, pero aun no inicio el viaje")
                     {
                         estado = "El paquete fue asignado satisfactoriamente a una unidad de traslado, pero la misma aún no ha iniciado su viaje hacia la sucursal";
                     }
 
-                    if (transporte.estado_viaje() == "en curso")
+                    if (transporte.ver_estado_viaje() == "en curso")
                     {
                         estado = "El paquete se halla en curso dentro de su viaje para poder llegar a destino";
                     }
 
-                    if (transporte.estado_viaje() == "fin")
+                    if (transporte.ver_estado_viaje() == "fin")
                     {
                         var sucursal = Sucursal.hallar(codigo_sucursal);
 

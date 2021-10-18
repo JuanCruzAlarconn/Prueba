@@ -53,5 +53,28 @@ namespace Desarrollo_de_clases
         {
             throw new NotImplementedException();
         }
+
+        public static string tipo_envio(Punto_geografico A, Punto_geografico B)
+        {
+            string tipo = "";
+
+            if(A.localidad==B.localidad)
+            {
+                tipo = "local";
+
+            }
+
+            if(A.region==B.region)
+            {
+                tipo = "regional";
+            }
+
+            if(A.pais==B.pais)
+            {
+                tipo = "internacional";
+            }
+
+            return tipo;
+        }
     }
 }

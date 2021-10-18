@@ -24,6 +24,7 @@ namespace Desarrollo_de_clases
         public string modo_entrega { get; set; }
         public bool urgente { get; set; }
         public int? codigo_agencia { get; set; }
+        
 
         public static Orden_de_servicio Crear()
         {

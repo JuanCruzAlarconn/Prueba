@@ -15,7 +15,7 @@ namespace Desarrollo_de_clases
         public DateTime? fecha_egreso { get; set; } // Cuando nace el objeto permanece en null hasta que lo damos por finalizado, la clase transporte le da la fecha de fin
         public Paquete paquete { get; set; }
         public int? codigo_transporte_asignado { get; set; }
-        public int? codigo_cliente { get; set; }
+        public int? codigo_cliente { get; set; }//si queda en null es porque se trata de un cliente eventual, en tal motivo no cuenta con un código de cliente dentro del sistema
         public int codigo_seguro { get; set; }
         public decimal precio { get; set; }
         public Punto_geografico origen { get; set; }
